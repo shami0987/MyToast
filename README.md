@@ -302,9 +302,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-Your Name - [@YourTwitterHandle](https://twitter.com/YourTwitterHandle)
+Your Name - Ehtisham Altaf
 
-Project Link: [https://github.com/YOUR_USERNAME/MyToast](https://github.com/YOUR_USERNAME/MyToast)
+Project Link: [https://github.com/shami0987/MyToast](https://github.com/YOUR_USERNAME/MyToast)
 
 ## Acknowledgments
 

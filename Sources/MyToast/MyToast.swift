@@ -240,20 +240,24 @@ public struct ToastModifier: ViewModifier {
     let duration: TimeInterval
 
     public func body(content: Content) -> some View {
-        content
-            .onChange(of: isPresented) { newValue in
-                if newValue {
-                    Toast.shared.show(
-                        message: message,
-                        style: style,
-                        position: position,
-                        duration: duration
-                    )
-                    DispatchQueue.main.asyncAfter(deadline: .now() + duration + 0.5) {
-                        isPresented = false
+        if #available(iOS 14.0, *) {
+            content
+                .onChange(of: isPresented) { newValue in
+                    if newValue {
+                        Toast.shared.show(
+                            message: message,
+                            style: style,
+                            position: position,
+                            duration: duration
+                        )
+                        DispatchQueue.main.asyncAfter(deadline: .now() + duration + 0.5) {
+                            isPresented = false
+                        }
                     }
                 }
-            }
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }
 
